@@ -13,7 +13,56 @@
   letter-spacing: .3px;
 }
 
+/* users table
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+#user-content{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.users-table{
+  text-align: center;
+  font-weight: 400;
+  font-family: 'Gotham A', 'Gotham B';
+  border: 1px solid #2f3234;
+  box-shadow: 10px 10px 5px #888888;
+  transition: height .5s ease-in;
+}
+
+.users-tabel-header{
+  color: #FFF;
+  padding: 10px;
+  background: #4e58df;
+}
+
+.user-details{
+  color: #2f3234;
+  padding: 10px;
+}
+
+.num-results-text{
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.animate-user-row-enter {
+  max-height: 10px;
+  transition: max-height .5s ease-in;
+}
+
+.animate-user-row-enter.animate-user-row-enter-active {
+  max-height: 100px;
+}
+
+.animate-user-row-leave {
+  max-height: 100px;
+  transition: max-height .5s ease-in;
+}
+
+.animate-user-row-leave.animate-user-row-leave-active {
+  max-height: 0px;
+}
 
 /******************************************** Smaller than 1024 **************************************************************/
 @media screen and (max-width: 1024px) {
