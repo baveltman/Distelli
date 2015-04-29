@@ -4,10 +4,19 @@
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Skeleton: Responsive CSS Boilerplate</title>
+  <title> Distelli: Software Delivery | Configuration Management</title>
+  <meta name="description" content="Distelli's software delivery solution streamlines the way you build, package and deploy your applications. Create a free account today!" />
+  <link rel="canonical" href="https://www.distelli.com">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Distelli" />
+  <meta property="og:image" content="https://www.distelli.com/theme/images/distelli_og.png" />
+  <meta property="twitter:account_id" content="485332624" />
+  <meta property="twitter:site" content="@distelli" />
   <meta name="description" content="Demo for Distelli utilizing React.js, Skeleton.css, node.js and MySQL">
   <meta name="author" content="Boris Veltman">
+  <link rel="shortcut icon" href="https://www.distelli.com/theme/images/favicon.ico" type="image/x-icon" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -21,11 +30,14 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/skeleton.css">
+  <link rel="stylesheet" href="/css/fonts/fonts.css">
+  <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/users.css">
 
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/js/mobile-menu.js"></script>
 
 </head>
 <body>
@@ -33,70 +45,105 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-  <div class="section hero">
-    <div class="container">
-      <div class="row">
-        <div class="one-half column">
-          <h4 class="hero-heading">Stop coding non-responsive sites. Let users view sites from anywhere.</h4>
-          <a class="button button-primary" href="http://getskeleton.com">Try Skeleton</a>
-        </div>
-        <div class="one-half column phones">
-          <img class="phone" src="images/iphone.png">
-          <img class="phone" src="images/iphone.png">
+<div id="content">
+  
+  <div id="mobile-menu" class="visible-when-small">
+    <ul>
+      <li><a href="https://www.distelli.com/features">Features</a></li>
+      <li><a href="https://www.distelli.com/pricing">Pricing</a></li>
+      <li><a href="https://www.distelli.com/docs">Docs</a></li>
+      <li><a href="https://www.distelli.com/about">About</a></li>
+      <li><a href="https://www.distelli.com/blog">Blog</a></li>
+      <li><a href="https://www.distelli.com/press">Press</a></li>
+      <li><a href="/login">Sign in</a></li>
+      <li><a class="sign-up" href="/signup">Sign up</a></li>
+    </ul>
+  </div>
+
+  <div id="header-main" class="blue-bg-1"> <!-- start header-main -->
+
+    <img src="https://www.distelli.com/theme/images/menu-mobile.png" class="mobile-menu-button visible-when-small" alt="Distelli Mobile Menu" %>
+    <a href="https://www.distelli.com">
+      <img id="logo-mobile" src="https://www.distelli.com/theme/images/logo-white.png" alt="Distelli Logo" class="visible-when-small" />
+    </a>    
+    <div class="container90">
+        <div class="top-bar">
+          <a href="http://www.distelli.com">
+            <img id="logo" src="https://www.distelli.com/theme/images/logo-white.png" alt="Distelli Logo" class="hide-when-small-inline" />
+          </a>
+          <ul class="nav hide-when-small"  itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <li itemprop="url"><a href="https://www.distelli.com/features">Features</a></li>
+            <li itemprop="url"><a href="https://www.distelli.com/pricing">Pricing</a></li>
+            <li itemprop="url"><a href="https://www.distelli.com/docs">Docs</a></li>
+            <li itemprop="url"><a id="more-menu">More</a></li>
+            <li class="app-actions" itemprop="url"><a href="/login">Sign in</a></li>
+            <li itemprop="url"><a class="sign-up" href="/signup">Sign up</a></li>
+          </ul>
+
+        <div class="more-menu animated">
+          <ul>
+            <li><a href="https://www.distelli.com/customers">Customers</a></li>
+            <li><a href="https://www.distelli.com/about">About</a></li>
+            <li><a href="https://www.distelli.com/blog">Blog</a></li>
+            <li><a href="https://www.distelli.com/press">Press</a></li>
+            <li><a target="_blank" href="https://angel.co/distelli/jobs">Careers</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="section values">
-    <div class="container">
-      <div class="row">
-        <div class="one-third column value">
-          <h2 class="value-multiplier">67%</h2>
-          <h5 class="value-heading">Purchase Increase</h5>
-          <p class="value-description">Percentage of users more likely to purchase on mobile friendly site.</p>
-        </div>
-        <div class="one-third column value">
-          <h2 class="value-multiplier">90%</h2>
-          <h5 class="value-heading">Multi-device Users</h5>
-          <p class="value-description">Most of the world accesses the internet on multiple devices.</p>
-        </div>
-        <div class="one-third column value">
-          <h2 class="value-multiplier">66%</h2>
-          <h5 class="value-heading">Sad Users</h5>
-          <p class="value-description">Percentage of users that are frustrated with page load times.</p>
-        </div>
+        <h1 class="clearfix">Welcome to the user admin page.</h1>
+        <h2>Here you will find easily tabulated information about our customers.</h2>
+        <h2>Feel free to browse or edit their records.</h2>
       </div>
     </div>
-  </div>
+  </div> <!-- end header-main -->
 
-  <div class="section get-help">
-    <div class="container">
-      <h3 class="section-heading">Need help getting started?</h3>
-      <p class="section-description">Skeleton is an amazingly easy place to start with responsive development. If you want to learn more, just visit the documentation!</p>
-      <a class="button button-primary" href="http://getskeleton.com">View Skeleton Docs</a>
+  <div id="user-content"> <!-- start user content -->
+
+  </div> <!-- end user content -->
+</div> <!-- end content -->
+
+
+
+</body> <!-- end body -->
+
+<footer>
+<div id="footer" class="no-bottom-border section dark-bg-1">
+  <div class="container90">
+    <div class="third floatLeft">
+      <h5>Product</h5>
+      <ul>
+        <li><a href="https://www.distelli.com/features">Features</a></li>
+        <li><a href="https://www.distelli.com/pricing">Pricing</a></li>
+        <li><a href="https://www.distelli.com/docs">Documentation</a></li>
+        <li><a href="https://www.distelli.com/customers">Customers</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+      </ul>
+    </div>
+    <div class="third floatLeft">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="https://www.distelli.com/about">About</a></li>
+        <li><a href="https://www.distelli.com/press">Press</a></li>
+        <li><a target="_blank" href="https://angel.co/distelli/jobs">Careers</a></li>
+        <li><a href="https://www.distelli.com/terms-of-service">Terms of Service</a></li>
+        <li><a href="https://www.distelli.com/privacy-policy">Privacy Policy</a></li>
+        <li><a href="https://www.distelli.com/blog">Blog</a></li>
+      </ul>
+    </div>
+    <div class="third floatRight">
+      <img src="https://www.distelli.com/theme/images/hexagons.png" alt="Distelli Hexagon" />
+      <span class="contact clearfix">Questions, comments, feedback?</span>
+      <span><a target="_blank" href="mailto:ping@distelli.com">ping@distelli.com</a></span>
     </div>
   </div>
+</div>
 
-  <div class="section categories">
-    <div class="container">
-      <h3 class="section-heading">Responsive Images</h3>
-      <p class="section-description">Skeleton images sit easily in grid with .u-max-full-width class. I suggest exploring solution to serving different images based on device size.</p>
-      <div class="row">
-        <div class="one-half column category">
-          <img class="u-max-full-width" src="images/placeholder.png">
-        </div>
-        <div class="one-half column category">
-          <img class="u-max-full-width" src="images/placeholder.png">
-        </div>
-      </div>
-    </div>
+<div id="subFooter" class="section no-top-border dark-bg-1">
+  <div class="container90">
+    <span>Copyright © <script>document.write(new Date().getFullYear())</script>. Distelli Inc.</span><br />
+    <span>All trademarks are the property of their respective owners.</span>
   </div>
+</div>
+</footer> <!-- end footer -->
 
-
-
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-</body>
-</html>
+</html> <!-- end document -->
