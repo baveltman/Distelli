@@ -2,9 +2,8 @@ var express = require('express');
 var router = express.Router();
 var users = require('./controllers/users.js');
  
- //temporary index
 router.get('/', function(req, res){
-    res.send('welcome to Distelli Demo'); 
+    res.sendFile(__dirname + '/index.html'); 
 });
 
 router.get('/users', users.getUsers);
