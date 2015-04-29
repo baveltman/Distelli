@@ -1,0 +1,14 @@
+CREATE TABLE users 
+	(
+		_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+		first_name VARCHAR(30) NOT NULL,
+		last_name VARCHAR(30) NOT NULL,
+		street VARCHAR(100) NOT NULL,
+		city VARCHAR(30) NOT NULL,
+		state VARCHAR(30) NOT NULL,
+		zip VARCHAR(5) NOT NULL,
+
+		PRIMARY KEY(_id)
+	);
+
+
