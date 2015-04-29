@@ -19,7 +19,7 @@ exports.getUsers = function(req, res){
     };
     
 	//query for user records 
-    connection.query("SELECT * FROM users",[id],function(err, userResults, fields){
+    connection.query("SELECT * FROM users",function(err, userResults, fields){
         if(!!err){
         	//handle error
         	res.status(500); //internal server error
@@ -28,7 +28,8 @@ exports.getUsers = function(req, res){
         }else{
         	//return data successfully
         	res.status(200);
-            data["user"] = userResults;
+        	data["count"] = userResults.length;
+            data["users"] = userResults;
         }
         res.json(data);
     });
