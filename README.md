@@ -1,3 +1,5 @@
+live hosted solution: http://distelli-baveltman.rhcloud.com/
+
 The code herein contains a coding exercise completed for Distelli.
 
 The code portrays a single page app with a table component built in React.js
