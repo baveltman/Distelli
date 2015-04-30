@@ -86,6 +86,10 @@ var UsersInfo = React.createClass({
   * updates component state after click on forward button
   */
   pageForward : function(event){
+  	if (this.state.count == this.state.initialCount){
+  		return;
+  	}
+
   	if (this.state.endIndex <= this.state.initialCount){
   		//can page forward
   		if (this.state.endIndex + this.state.count <= this.state.initialCount){
@@ -172,7 +176,7 @@ React.render(
 
 setTimeout(function () {
 	React.render(
-	  <UsersInfo source="https://distelli-baveltman.rhcloud.com//users/" />,
+	  <UsersInfo source="http://localhost:3000/users/" />,
 	  document.getElementById('user-content')
 	);
 }, 1500);
