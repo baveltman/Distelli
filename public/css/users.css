@@ -18,7 +18,7 @@
 
 #user-content{
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
 .users-table{
@@ -39,6 +39,7 @@
 .user-details{
   color: #2f3234;
   padding: 10px;
+  border-bottom: 1px solid #2f3234;
 }
 
 .num-results-text{
@@ -46,9 +47,25 @@
   font-weight: bold;
 }
 
+.pager{
+  font-weight: bold;
+  margin-top: 10px;
+  float: right;
+}
+
+.pager-button{
+    transition: color .5s ease;
+    margin-right: 10px;
+}
+
+.pager-button:hover{
+  cursor: pointer;
+  color: rgba(69,170,255,.9);
+}
+
 .animate-user-row-enter {
   max-height: 10px;
-  transition: max-height .5s ease-in;
+  transition: max-height .8s ease;
 }
 
 .animate-user-row-enter.animate-user-row-enter-active {
@@ -57,12 +74,13 @@
 
 .animate-user-row-leave {
   max-height: 100px;
-  transition: max-height .5s ease-in;
+  transition: max-height .8s ease;
 }
 
 .animate-user-row-leave.animate-user-row-leave-active {
-  max-height: 0px;
+  max-height: 10px;
 }
+
 
 /******************************************** Smaller than 1024 **************************************************************/
 @media screen and (max-width: 1024px) {
