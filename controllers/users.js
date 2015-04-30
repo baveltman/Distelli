@@ -2,7 +2,7 @@
 * /users/ endpoints
 */
 
-//import models
+//import user model
 var User = require('../models/User.js');
 
 //get db connection

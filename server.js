@@ -1,7 +1,7 @@
 
-var express = require('express'); 
+var express = require('express'); // Express for routing
 var path = require('path');
-var app = express();// Express App include
+var app = express();
 var http = require('http').Server(app); // http server
 
 var bodyParser = require("body-parser"); // Body parser for fetch posted data

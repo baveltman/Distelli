@@ -1,3 +1,6 @@
+-- schema for users TABLE
+-- as well as PROCEDURE to populate users table with test data
+
 CREATE TABLE users 
 	(
 		_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -35,4 +38,4 @@ CREATE PROCEDURE insertUsers()
    END LOOP usersLoop;
 END $$
 
-CALL PROCEDURE insertUsers();
+CALL insertUsers();

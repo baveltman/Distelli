@@ -2,6 +2,9 @@ var mysql = require('mysql'); // Mysql include
 
 var currentConnection = null;
 
+/**
+* Creates connection with MySQL database
+*/
 module.exports.getConnection = function(){
 	if (!currentConnection || currentConnection.state == "disconnected"){
 		var connection = mysql.createConnection({ 

@@ -1,6 +1,14 @@
+//include react animation support
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
+/**
+* Model for Users table component
+*/
 var UsersInfo = React.createClass({
+
+  /**
+  *	defines initial state of component
+  */
   getInitialState: function() {
     return {
       users: '',
@@ -11,6 +19,9 @@ var UsersInfo = React.createClass({
     };
   },
 
+  /**
+  * updates component state with async call to /users endpoint
+  */
   componentDidMount: function() {
     $.get(this.props.source, function(results) {
       var usersInfo = results;
@@ -26,6 +37,9 @@ var UsersInfo = React.createClass({
     }.bind(this));
   },
 
+  /**
+  * updates component state after dropdown selection for max results per page
+  */
   numUserChange: function(event){
   	if (this.state.startIndex + parseInt(event.target.value) <= this.state.initialCount){
   		//increase page results
@@ -44,6 +58,9 @@ var UsersInfo = React.createClass({
      }
   },
 
+  /**
+  * updates components state after click on back button
+  */
   pageBack : function(event){
   	if (this.state.startIndex > 0){
   		//can page back
@@ -65,6 +82,9 @@ var UsersInfo = React.createClass({
   	}
   },
 
+  /**
+  * updates component state after click on forward button
+  */
   pageForward : function(event){
   	if (this.state.endIndex <= this.state.initialCount){
   		//can page forward
@@ -86,14 +106,6 @@ var UsersInfo = React.createClass({
   },
 
   render: function() {
-  	if (!this.state.users) {
-            return (
-            	<div className="container90">
-            		<p>Loading User Data...</p>
-        		</div>
-            );
-    }
-
 
         var userRows = [];
         var requestedCount = parseInt(this.state.count);
@@ -101,12 +113,12 @@ var UsersInfo = React.createClass({
         for (var i=this.state.startIndex ; i < this.state.endIndex; ++i){
         	userRows.push(
                 	<div className="row user-details">
-                		<div className="two columns">{this.state.users[i].first_name}</div>
-	    				<div className="two columns">{this.state.users[i].last_name}</div>
-	    				<div className="two columns">{this.state.users[i].street}</div>
-	    				<div className="two columns">{this.state.users[i].city}</div>
-	    				<div className="two columns">{this.state.users[i].state}</div>
-	    				<div className="two columns">{this.state.users[i].zip}</div>
+                		<div className="two columns user-info">{this.state.users[i].first_name}</div>
+	    				<div className="two columns user-info">{this.state.users[i].last_name}</div>
+	    				<div className="two columns user-info">{this.state.users[i].street}</div>
+	    				<div className="two columns user-info">{this.state.users[i].city}</div>
+	    				<div className="two columns user-info">{this.state.users[i].state}</div>
+	    				<div className="two columns user-info">{this.state.users[i].zip}</div>
                 	</div>
                 );
         }
@@ -114,7 +126,7 @@ var UsersInfo = React.createClass({
         return (
         	<div>
         		<div className="row user-number-results">
-        			<div className="four columns">
+        			<div className="eight columns">
         				<span className="num-results-text">Max results Per Page: </span>
 			        	<select id="number-of-users" onChange={this.numUserChange} value={this.state.value}>
 			        		<option value="5">5</option>
@@ -125,11 +137,11 @@ var UsersInfo = React.createClass({
 			        		<option value="100">100</option>
 			      		</select>
 			      	</div>
-			      	<div className="eight columns">
+			      	<div className="four columns">
 			      		<div className="pager">
 			      			<span className="pager-button" onClick={this.pageBack}> &lt; </span> 
 			      			<span className="pager-button" onClick={this.pageForward}> &gt; </span>
-			      			<span> {this.state.startIndex + 1} </span> - <span> {this.state.endIndex} </span> out of {this.state.initialCount}
+		      				<span> {this.state.startIndex + 1} </span> - <span> {this.state.endIndex} </span> out of {this.state.initialCount}
 			      		</div>
 			      	</div>
 		      	</div>
@@ -152,8 +164,15 @@ var UsersInfo = React.createClass({
   	}
 });
 
-// dont forget to point at production before deploying
+//display loader on page load, while async data is retrieved
 React.render(
-  <UsersInfo source="http://localhost:3000/users/" />,
-  document.getElementById('user-content')
-);
+	  <div className="loader">Loading...</div>,
+	  document.getElementById('user-content')
+	);
+
+setTimeout(function () {
+	React.render(
+	  <UsersInfo source="https://distelli-baveltman.rhcloud.com//users/" />,
+	  document.getElementById('user-content')
+	);
+}, 1500);

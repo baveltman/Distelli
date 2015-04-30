@@ -12,6 +12,9 @@ function User() {
 	this.zip;
 }
 
+/**
+* creates user object from body of request object
+*/
 User.prototype.createFromRequest = function(req){
 	var user = new User();
 	user.id = req.body.id;
