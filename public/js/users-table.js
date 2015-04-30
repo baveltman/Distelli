@@ -86,7 +86,7 @@ var UsersInfo = React.createClass({
   * updates component state after click on forward button
   */
   pageForward : function(event){
-  	if (this.state.count == this.state.initialCount){
+  	if (this.state.endIndex == this.state.initialCount){
   		return;
   	}
 
