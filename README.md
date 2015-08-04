@@ -27,4 +27,6 @@ Finally, I made use of one open-source css loader and customized it to fit Diste
 The code for the loader can be found at http://projects.lukehaas.me/css-loaders/
 I employed the loader to create a good user experience for a user who is waiting for the initial user data to arrive asynchronously.
 
-Thanks for this opportunity, this was a lot of fun!
+Thanks for this opportunity, this was a lot of fun!!!
+
+
